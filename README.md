@@ -30,8 +30,7 @@ Bad-reading safeguards: Failed IMU reads are skipped instead of being fed to the
 Turn fail-safe:Every turn has a timeout, so a drifting yaw estimate can't spin the robot forever.
 
 Results
-Worked in testing, including with the distance sensor blocked. [Add one line on what the robot did, for example "it stopped and scanned instead of driving on."
-
+Worked in testing, including with the distance sensor blocked. It stopped and scanned instead of driving on when met with an obstacle and turned to a different direction
 Files
 - Diagnosis.ino: the full sketch
  Setup
