@@ -13,21 +13,21 @@ The robot runs as a small state machine:
 
 What it does:
 
->FORWARD: Drives straight and polls distance at 20 Hz
+-FORWARD: Drives straight and polls distance at 20 Hz
 
->DECIDE_TURN: Stops, pans the servo right and left, picks the side with more space
+-DECIDE_TURN: Stops, pans the servo right and left, picks the side with more space
 
->TURNING: Spins until it reaches the target angle, the path is clear, or a timeout hits
+-TURNING: Spins until it reaches the target angle, the path is clear, or a timeout hits
 
->REVERSE_BACKOUT: If both sides are blocked, backs up briefly and makes a U-turn
+-REVERSE_BACKOUT: If both sides are blocked, backs up briefly and makes a U-turn
 
->Sensor handling
+-Sensor handling
 
->Heading:A Mahony filter fuses gyro and accelerometer data to estimate yaw. The gyro is calibrated at startup.
+-Heading:A Mahony filter fuses gyro and accelerometer data to estimate yaw. The gyro is calibrated at startup.
 
->Bad-reading safeguards: Failed IMU reads are skipped instead of being fed to the filter. An obstacle must be seen on two consecutive readings before the robot reacts, and repeated no-echo readings from the distance sensor are treated as a problem instead of a clear path.
+-Bad-reading safeguards: Failed IMU reads are skipped instead of being fed to the filter. An obstacle must be seen on two consecutive readings before the robot reacts, and repeated no-echo readings from the distance sensor are treated as a problem instead of a clear path.
 
->Turn fail-safe:Every turn has a timeout, so a drifting yaw estimate can't spin the robot forever.
+-Turn fail-safe:Every turn has a timeout, so a drifting yaw estimate can't spin the robot forever.
 
 Results
 Worked in testing, including with the distance sensor blocked. It stopped and scanned instead of driving on when met with an obstacle and turned to a different direction
